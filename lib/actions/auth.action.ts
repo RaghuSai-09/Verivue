@@ -22,10 +22,10 @@ export async function signUp(params: SignUpParams) {
             success: true,
             message: 'User signed up successfully! Please Sign in.'
         }
-    } catch (e : any ) {
+    } catch (e) {
         console.error('Error during sign up:', e);
 
-        if(e.code === 'auth/EMAIL_exists') {
+        if((e as { code?: string }).code === 'auth/EMAIL_exists') {
             return {
                 success: false,
                 message: 'Email already exists. Please use a different email address.'
@@ -73,7 +73,7 @@ export async function signIn(params: SignInParams) {
             success: true,
             message: 'Signed in successfully!'
         }
-    } catch (e: any) {
+    } catch (e) {
         console.error('Error during sign in:', e);
         return {
             success: false,
