@@ -12,6 +12,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
     const { type, role, techstack, level, amount, userid } = await request.json();
+    console.log({ type, role, level, amount});
 
     try {
         const { text: questions } = await generateText({
