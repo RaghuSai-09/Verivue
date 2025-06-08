@@ -26,7 +26,7 @@ export async function POST(request: Request) {
             Please return only the questions without any additional text.
             The questions are going to be read by a voice assistant o do not use "/" or "*" or any other special characters which might break the voice assistant.
             Return the questions formatted like this: 
-            ['Question 1', 'Question 2', 'Question 3']
+            ["Question 1", "Question 2", "Question 3"]
             
             Thank you! <3 ` ,
         });
